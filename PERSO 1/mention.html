@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Mentions légales - McDonald's France</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+
+        a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid #ddd;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            border-bottom: none;
+            background-color: #f9f9f9;
+        }
+
+        .tab-active {
+            background-color: #fff;
+            border-top: 2px solid #ffcc00;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .content {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+        }
+
+        .content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    
+<div class="container">
+    <header class="contact-header">
+        <h1>Mentions légales</h1>
+    </header>
+
+    <div class="tabs">
+        <div class="tab tab-active" data-tab="tab-1">Éditeur</div>
+        <div class="tab" data-tab="tab-2">Propriété</div>
+        <div class="tab" data-tab="tab-3">Responsabilité</div>
+        <div class="tab" data-tab="tab-4">Données personnelles</div>
+        <div class="tab" data-tab="tab-5">Droit applicable</div>
+    </div>
+
+    <div id="tab-1" class="content active">
+        <h2>Éditeur du site</h2>
+        <ul>
+            <li><strong>Raison sociale :</strong> McDonald's by Shirel</li>
+            <li><strong>Siège social :</strong> 47 Bd de Pesaro, 92000 Nanterre, France</li>
+            <li><strong>Téléphone :</strong> +33 6 00 00 00 00</li>
+            <li><strong>Email :</strong> <a href="mailto:shirel.boccara@edu.devinci.fr">shirel.boccara@edu.devinci.fr</a></li>
+            <li><strong>Numéro de SIRET :</strong> Non applicable</li>
+            <li><strong>Directeur de la publication :</strong> Shirel Boccara</li>
+        </ul>
+    </div>
+
+    <div id="tab-2" class="content">
+        <h2>Propriété intellectuelle</h2>
+        <p>Tous les contenus présents sur ce site, y compris, mais sans s'y limiter, les textes, images, graphismes, logos, vidéos, icônes, sons, sont la propriété exclusive de McDonald's by Shirel ou de ses partenaires. Toute reproduction, représentation, modification, publication, transmission, ou dénaturation, totale ou partielle, du site ou de son contenu, par quelque procédé que ce soit, sans autorisation préalable écrite de McDonald's by Shirel, est strictement interdite et constitue une contrefaçon sanctionnée par le Code de la propriété intellectuelle.</p>
+    </div>
+
+    <div id="tab-3" class="content">
+        <h2>Responsabilité</h2>
+        <p>Shirel s'efforce de fournir des informations aussi précises que possible sur ce site. Cependant, nous ne saurions garantir l'exactitude, la complétude, ou l'actualité des informations présentes sur le site. McDonald's by Shirel ne pourra être tenue responsable des omissions, des inexactitudes et des carences dans la mise à jour des informations.</p>
+        <p>Le site peut contenir des liens hypertextes vers d'autres sites que nous ne contrôlons pas. McDonald's by Shirel décline toute responsabilité quant au contenu de ces sites tiers.</p>
+    </div>
+
+    <div id="tab-4" class="content">
+        <h2>Données personnelles</h2>
+        <p>Conformément à la législation en vigueur, et notamment au Règlement Général sur la Protection des Données (RGPD), vous disposez de droits relatifs à la protection de vos données personnelles. Pour plus d'informations, veuillez consulter notre <a href="confidentialite.html">Politique de confidentialité</a>.</p>
+    </div>
+
+    <div id="tab-5" class="content">
+        <h2>Droit applicable</h2>
+        <p>Les présentes mentions légales sont régies par le droit français. En cas de litige, et après tentative de résolution à l'amiable, compétence est attribuée aux tribunaux compétents de Paris, France.</p>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 McDonald's by Shirel. Tous droits réservés.</p>
+</footer>
+
+<script>
+    const tabs = document.querySelectorAll(".tab");
+    const contents = document.querySelectorAll(".content");
+
+    tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            tabs.forEach(t => t.classList.remove("tab-active"));
+            contents.forEach(c => c.classList.remove("active"));
+
+            tab.classList.add("tab-active");
+            document.getElementById(tab.dataset.tab).classList.add("active");
+        });
+    });
+</script>
+
+</body>
+</html>

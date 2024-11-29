@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Contactez-nous - McDonald's France</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #ffcc00;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #333;
+        }
+
+        input, textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        button {
+            background-color: #ffcc00;
+            border: none;
+            padding: 15px;
+            color: #333;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e6b800;
+        }
+
+        .contact-info {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+        }
+
+        .social-links img {
+            width: 32px;
+            margin: 0 10px;
+            vertical-align: middle;
+        }
+    </style>
+
+</head>
+<button id="darkModeToggle">Mode Sombre</button>
+
+<body>
+
+    <header class="contact-header">
+        <h1>Contactez McDonald's avec Shirel</h1>
+    </header>
+
+<div class="container">
+
+    <h2 class="listening-header">Nous sommes à votre écoute</h2>
+
+    <form action="#" method="post">
+
+        <label for="name">Nom complet :</label>
+        <input type="text" id="name" name="name" placeholder="Votre nom" required>
+
+        <label for="email">Adresse e-mail :</label>
+        <input type="email" id="email" name="email" placeholder="Votre e-mail" required>
+
+        <label for="subject">Sujet :</label>
+        <input type="text" id="subject" name="subject" placeholder="Sujet de votre message" required>
+
+        <label for="message">Message :</label>
+        <textarea id="message" name="message" placeholder="Votre message" required></textarea>
+
+        <button type="submit">Envoyer le message</button>
+    </form>
+
+    <div class="contact-info">
+        <h3>Informations de contact</h3> 
+        <p>📍 Adresse : 47 Bd de Pesaro, 92000 Nanterre, France</p>
+        <p>📞 Téléphone : +33 6 00 00 00 00</p>
+        <p>📧 Email : shirel.boccara@edu.devinci.fr</p>
+
+        <div class="social-links">
+
+            <a href="https://facebook.com/McDonaldsFrance" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+            </a>
+
+            <a href="https://instagram.com/McDonaldsFrance" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+            </a>
+
+            <a href="https://twitter.com/McDonaldsFrance" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
+            </a>
+
+            <a href="https://youtube.com/McDonaldsFrance" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733646.png" alt="YouTube">
+            </a>
+
+        </div>
+
+    </div>
+    
+</div>
+<script src="main.js"></script>
+
+</body>
+</html>

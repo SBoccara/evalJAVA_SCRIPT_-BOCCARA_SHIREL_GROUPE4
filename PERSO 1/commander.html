@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commander - McDonald's France</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .order-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .order-container h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        textarea {
+            resize: none;
+            height: 80px;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #ffcc00;
+            outline: none;
+        }
+
+        .button-link {
+            width: 100%;
+            background-color: #ffcc00;
+            color: #333;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            padding: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s;
+        }
+
+        .button-link:hover {
+            background-color: #e6b800;
+            transform: scale(1.05);
+        }
+
+        .confirmation {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 16px;
+            color: #4caf50;
+        }
+
+        @media (max-width: 768px) {
+            .order-container {
+                padding: 20px;
+            }
+
+            .button-link {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button id="darkModeToggle">Mode Sombre</button>
+
+    <div class="order-container">
+        <h2>Passer une commande</h2>
+        <form id="orderForm" action="/checkout" method="POST">
+            <label for="item"><u>Sélectionnez votre menu :</u></label>
+            <select id="item" name="item" required>
+                <option value="nothing">Aucun</option>
+                <option value="theamericanclassic™">The American Classic™</option>
+                <option value="theroyalmenu™">The Royal Menu™</option>
+                <option value="thefantasticmulticolor™">The Fantastic Multicolor™</option>
+                <option value="thetropicalbeach™">The Tropical Beach™</option>
+                <option value="themagicalburger™">The Magical Burger™</option>
+                <option value="theveggie™">The Veggie™</option>
+            </select>
+
+            <label for="item"><u>Sélectionnez votre boisson :</u></label>
+            <select id="item" name="item" required>
+                <option value="nothing">Aucun</option>
+                <option value="theicecold™">The Ice Cold™</option>
+                <option value="thetropicalbliss™">The Tropical Bliss™</option>
+                <option value="thefantasticmulticolor™">The Fantastic Multicolor™</option>
+                <option value="thepinksmoothie™">The Pink Smoothie™</option>
+                <option value="theicecoffee™">The Ice Coffee™</option>
+                <option value="thegreensmoothie™">The Green Smoothie™</option>
+                <option value="thecocacola™">The Coca Cola™</option>
+                <option value="thecaramelmacchiato™">The Caramel Macchiato™</option>
+                <option value="thematchalatte™">The Matcha Latte™</option>
+                <option value="thebritishtea™">The British Tea™</option>
+            </select>
+
+
+            <label for="item"><u>Sélectionnez votre salade :</u></label>
+            <select id="item" name="item" required>
+                <option value="nothing">Aucun</option>
+                <option value="thewatermelonsalad™">The Watermelon Salad™</option>
+                <option value="theavocadotropical™">The Avocado Tropical™</option>
+                <option value="thelightbeams™">The Light Beams™</option>
+            </select>
+
+            <label for="item"><u>Sélectionnez votre burger :</u></label>
+            <select id="item" name="item" required>
+                <option value="nothing">Aucun</option>
+                <option value="thetwilightbeef™">The Twilight Beef™</option>
+                <option value="theicechicken™">The Ice Chicken™</option>
+                <option value="theblackfusion™">The Black Fusion™</option>
+                <option value="themacarondelight™">The Macaron Delight™</option>
+                <option value="thetropicalmulticolorshrimp™">The Tropical Muticolor Shrimp™</option>
+                <option value="thefallafelburger™">The Fallafel Burger™</option>
+            </select>
+
+            <label for="item"><u>Sélectionnez votre petite faim :</u></label>
+            <select id="item" name="item" required>
+                <option value="nothing">Aucun</option>
+                <option value="themozzasticks™">The Mozza Sticks™</option>
+                <option value="thenems™">The Nems™</option>
+                <option value="bigcheese™">Big Cheese™</option>
+                <option value="thehotfriest™">The Hot Fries™</option>
+                <option value="thetacos™">The Taco’s™</option>
+                <option value="theonionrings™">The Onion Rings™</option>
+                <option value="thesalmonsushi™">The Salmon Sushi™</option>
+                <option value="themaki™">The Maki™</option>
+                <option value="theonigiri™">The Onigiri™</option>
+            </select>
+
+            <label for="item"><u>Sélectionnez votre dessert :</u></label>
+            <select id="item" name="item" required>
+                <option value="nothing">Aucun</option>
+                <option value="thechocolatepie™">The Chocolate Pie™</option>
+                <option value="thestrawberrycake™">The Strawberry Cake™</option>
+                <option value="thecheesecake™">The Cheesecake™</option>
+                <option value="thechocolatecake™">The Chocolate Cake™</option>
+                <option value="thetiramisu™">The Tiramisu™</option>
+                <option value="theextremesweetburger™">The Extreme Sweet Burger™</option>
+                <option value="mangoicecream™">Mango Ice Cream™</option>
+                <option value="caramelicecream™">Caramel Ice Cream™</option>
+                <option value="chocolateicecream™">Chocolate Ice Cream™</option>
+                <option value="strawberry™">Strawberry™</option>
+                <option value="mango™">Mango™</option>
+                <option value="apple™">Apple™</option>
+            </select>
+
+            <label for="item"><u>Sélectionnez votre sauce :</u></label>
+            <select id="item" name="item" required>
+                <option value="nothing">Aucun</option>
+                <option value="spicyfire™">Spicy Fire™</option>
+                <option value="coldice™">Cold Ice™</option>
+                <option value="lemon™">Lemon™</option>
+                <option value="chocolate™">Chocolate™</option>
+                <option value="caramel™">Caramel™</option>
+                <option value="sweetcream™">Sweet Cream™</option>
+            </select>
+
+
+            <label for="quantity"><u>Quantité :</u></label>
+            <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" required>
+
+            <label for="extras"><u>Choisissez la taille de votre menu :</u></label>
+
+            <div>
+                <label for="small">Petite</label>
+                <input type="radio" id="small" name="size" value="small" required>
+            </div>
+
+            <div>
+                <label for="medium">Moyenne</label>
+                <input type="radio" id="medium" name="size" value="medium" required>
+            </div>
+
+            <div>
+                <label for="large">Grande</label> 
+                <input type="radio" id="large" name="size" value="large" required>
+            </div>
+           
+            <div>
+                <label for="extras"><u>Extras disponibles</u></label>
+            </div>
+
+            <div>                
+                <label for="avocado">Avocat</label>
+                <input type="checkbox" id="avocado" name="avocado" value="avocado">
+            </div>
+
+            <div>
+                <label for="bacon">Bacon</label>
+                <input type="checkbox" id="bacon" name="bacon" value="bacon">
+            </div>
+            
+
+            <div>
+                <label for="tomato">Tomates</label>
+                <input type="checkbox" id="tomato" name="tomato" value="tomato">
+            </div>
+
+            <div>
+                <label for="onion">Oignons</label>
+                <input type="checkbox" id="onion" name="onion" value="onion">
+            </div>
+
+            <div>
+                <label for="pickles">Cornichons</label>
+                <input type="checkbox" id="pickles" name="pickles" value="pickles">
+            </div>
+
+            
+
+
+
+            <label for="comment"><u>Instructions spéciales :</u></label>
+            <textarea id="comment" name="comment" placeholder="Indiquez vos préférences (sans sel, extra sauce...)"></textarea>
+
+            <label for="delivery_date"><u>Date de livraison :</u></label>
+            <input type="date" id="delivery_date" name="delivery_date" required>
+
+            <label for="delivery_time"><u>Heure de livraison :</u></label>
+            <input type="time" id="delivery_time" name="delivery_time" required>
+
+            <label for="address"><u>Adresse de livraison :</u></label>
+            <input type="text" id="address" name="address" placeholder="Entrez votre adresse" required>
+
+            <button type="submit" class="button-link">Commander</button>
+        </form>
+        <div class="confirmation" id="confirmationMessage" style="display: none;">
+            Votre commande a été enregistrée avec succès !
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('orderForm');
+        const confirmationMessage = document.getElementById('confirmationMessage');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            confirmationMessage.style.display = 'block';
+            form.reset();
+        });
+    </script>
+        <script src="main.js"></script>
+
+</body>
+</html>

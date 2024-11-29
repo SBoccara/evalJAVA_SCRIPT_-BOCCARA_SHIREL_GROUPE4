@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - McDonald's by Shirel</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .success {
+            border: 1px solid green;
+            background-color: rgba(81, 150, 2, 0.1);
+        }
+
+        .error {
+            border: 1px solid red;
+            background-color: rgba(255, 0, 0, 0.1);
+        }
+
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            display: none;
+            margin-top: -5px;
+            margin-bottom: 10px;
+        }
+
+        .status-message {
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            text-align: center;
+            font-weight: bold;
+            display: none;
+        }
+
+        .status-message.success {
+            background-color: rgba(81, 150, 2, 0.2);
+            color: green;
+        }
+
+        .status-message.error {
+            background-color: rgba(255, 0, 0, 0.2);
+            color: red;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ffcc00;
+            border: none;
+            color: #333;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            
+        }
+
+        button:hover {
+            background-color: #e6b800;
+        }
+
+        .signup-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .signup-link a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .dark-mode .login-container {
+            background-color: #1f1f1f;
+        }
+
+        .dark-mode input {
+            background-color: #2f2f2f;
+            border: 1px solid #555;
+            color: #e0e0e0;
+        }
+
+        .dark-mode button {
+            background-color: #333;
+            color: #ffcc00;
+        }
+
+        .dark-mode button:hover {
+            background-color: #444;
+        }
+
+        .dark-mode .signup-link a {
+            color: #ffcc00;
+        }
+
+        .dark-mode .error-message {
+            color: #ff6f6f;
+        }
+
+        .dark-mode .status-message.success {
+            background-color: rgba(81, 150, 2, 0.3);
+        }
+
+        .dark-mode .status-message.error {
+            background-color: rgba(255, 0, 0, 0.3);
+        }
+    </style>
+
+<body>
+
+    <div class="login-wrapper">
+        <button id="darkModeToggle">Mode Sombre</button>
+        <div class="login-container">
+            <h2>Se connecter</h2>
+            <div id="statusMessage" class="status-message"></div>
+            <form id="loginForm">
+                <label for="pseudo">Pseudo :</label>
+                <input type="text" id="pseudo" name="pseudo" placeholder="Entrez votre pseudo" required>
+                <span id="pseudoError" class="error-message"></span>
+
+                <label for="email">Adresse e-mail :</label>
+                <input type="email" id="email" name="email" placeholder="Entrez votre adresse e-mail" required>
+                <span id="emailError" class="error-message"></span>
+
+                <label for="password">Mot de passe :</label>
+                <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" required>
+                <span id="passwordError" class="error-message"></span>
+
+                <label for="newpassword">Entrer à nouveau votre mot de passe :</label>
+                <input type="password" id="newpassword" name="newpassword" placeholder="Entrez à nouveau votre mot de passe" required>
+
+                <span id="newpasswordError" class="error-message"></span>
+                <div>
+
+                    <label for="condition">J'accepte les conditions générale d'utilisation</label>
+                    <input type="checkbox" id="condition" name="condition" value="condition">
+                </div>
+    
+                <button type="submit">Connexion</button>
+            </form>
+            <p class="signup-link">Pas encore inscrit ? <a href="/signup">Créez un compte</a>.</p>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
